@@ -60,6 +60,10 @@ ActiveRecord::Schema.define(version: 20150819214958) do
     t.string   "shippingstate",      limit: 80
     t.string   "billingstate",       limit: 80
     t.string   "createdbyid",        limit: 18
+    t.string   "_hc_err"
+    t.string   "_hc_lastop"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "account", ["lastmodifieddate"], name: "account_idx_lastmodifieddate", using: :btree
@@ -98,6 +102,10 @@ ActiveRecord::Schema.define(version: 20150819214958) do
     t.string   "nextstep",               limit: 255
     t.integer  "fiscalquarter"
     t.text     "description"
+    t.string   "_hc_err"
+    t.string   "_hc_lastop"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "opportunity", ["lastmodifieddate"], name: "opportunity_idx_lastmodifieddate", using: :btree

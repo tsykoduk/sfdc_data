@@ -32,6 +32,9 @@ class Opportunity < ActiveRecord::Migration
       t.string   "nextstep",               limit: 255
       t.integer  "fiscalquarter"
       t.text     "description"
+      t.string   "_hc_err"  
+      t.string   "_hc_lastop"
+      t.timestamps
     end
 
     add_index "opportunity", ["lastmodifieddate"], name: "opportunity_idx_lastmodifieddate", using: :btree

@@ -42,6 +42,9 @@ class Account < ActiveRecord::Migration
       t.string   "shippingstate",      limit: 80
       t.string   "billingstate",       limit: 80
       t.string   "createdbyid",        limit: 18
+      t.string   "_hc_err"  
+      t.string   "_hc_lastop"
+      t.timestamps
     end
     add_index "account", ["lastmodifieddate"], name: "account_idx_lastmodifieddate", using: :btree
     add_index "account", ["sfid"], name: "account_idx_sfid", unique: true, using: :btree
