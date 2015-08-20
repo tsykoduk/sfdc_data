@@ -13,13 +13,15 @@ require "./helpers.rb"
 class App < Sinatra::Base
   
   get "/" do
-    @td_count = WwwAccess.all.count
-    @sfdc_count = SfdcWwwAccess.all.count
+    @archive_accounts_count = Account.all.count
+    @sfdc_accounts_count = SfdcAccount.all.count
+    @archive_opty_count = Opportunity.all.count
+    @sfdc_opty_count = SfdcOpportunity.all.count
     erb :index, :layout => :theme
   end
   
-  get "/pull-from-td" do
-    get_from_td()
+  get "/archive" do
+    archive()
     redirect to('/')  
   end
   

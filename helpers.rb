@@ -3,10 +3,18 @@ set :database, ENV['DATABASE_URL'] || "postgres://udrdrt4fu4gft3:pamm5rl6d2v0de1
 Dir["./models/*.rb"].each {|file| require file }
 
 
-def move_from_sfdc(object)
-  # need to grab an account and all of the optys that are associated with it
-  # and then move them over to the 
+def archive()
+
+end
+
+def put_into_sfdc()
   
+end
+
+def clean_sfdc()
   
+end
+
+def clean_archive()
   
 end
