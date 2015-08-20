@@ -35,7 +35,7 @@ class App < Sinatra::Base
     redirect to('/')
   end
   
-  get "/clean-staging" do
+  get "/clean-archive" do
     clean_td()
     redirect to('/')
   end    
