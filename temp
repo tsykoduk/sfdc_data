@@ -1,0 +1,3 @@
+[remote "heroku"]
+        url = https://git.heroku.com/afternoon-taiga-4055.git
+        fetch = +refs/heads/*:refs/remotes/heroku/*
