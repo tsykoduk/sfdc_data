@@ -1,11 +1,4 @@
 require 'bundler'
-require 'action_view'
-require 'active_record'
-require 'uri'
-require 'td'
-require 'td-client'
-require 'tilt/erubis'
-
 Bundler.require
 
 require "./helpers.rb"

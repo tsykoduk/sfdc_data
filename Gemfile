@@ -15,5 +15,5 @@ gem "sinatra-activerecord"
 gem "pg"
 gem "rake"
 
-gem "td"
-gem "td-client"
+#gem "td"
+#gem "td-client"
