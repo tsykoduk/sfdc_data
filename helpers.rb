@@ -1,6 +1,6 @@
 
 
-def archive
+def archive()
   a = 0
   o = 0
   sfdc_accounts = SfdcAccounts.all
@@ -28,10 +28,6 @@ end
 
 
 
-
-
-
-
 def put_into_sfdc()
   a = 0
   o = 0
@@ -48,10 +44,12 @@ def put_into_sfdc()
   end
 end
 
-def clean_sfdc()
-  
-end
 
 def clean_archive()
+  
+  accounts = Account.all
+  accounts.each do |a|
+    a.destroy
+  end
   
 end
