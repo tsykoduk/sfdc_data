@@ -53,3 +53,32 @@ def clean_archive()
   end
   
 end
+
+def generate_test_data(rows=10000)
+  
+  #this will generate 10000 accounts, and put them into a staging table in Postgres
+  #it will then copy them from the staging table into connect, for upload into SFDC
+  #it will then clean out the staging table
+  
+  #if you need more or less, call it by hand and pass it the number that you need
+  
+  rows.times do
+    foo = StagingAccount.new
+    foo.name = Faker::Company.name
+    foo.billingstreet = Faker::Address.street_address
+    foo.billingcity = Faker::Address.city
+    foo.billingstate = Faker::Address.state
+    foo.billingpostalcode = Faker::Address.postcode
+    foo.shippingstreet = Faker::Address.street_address
+    foo.shippingcity = Faker::Address.city
+    foo.shippingstate = Faker::Address.state
+    foo.shippingpostalcode = Faker::Address.postcode
+    foo.description = Faker::Company.catch_phrase
+    foo.website = Faker::Internet.url('example.com')
+    foo.annualrevenue = Random.new.rand(10000..10000000)
+    foo.fax = Faker::PhoneNumber.phone_number
+    foo.phone= Faker::PhoneNumber.phone_number
+    foo.numberofemployees = Random.new.rand(1000)
+    foo.save
+  end
+end

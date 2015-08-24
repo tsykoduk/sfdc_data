@@ -14,6 +14,7 @@ gem "activerecord"
 gem "sinatra-activerecord"
 gem "pg"
 gem "rake"
+gem "faker"
 
 #gem "td"
 #gem "td-client"
