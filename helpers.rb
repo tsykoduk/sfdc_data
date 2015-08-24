@@ -2,11 +2,13 @@
 
 def archive()
   a = 0
-  o = 0
   sfdc_accounts = SfdcAccounts.all
   total_a = sfdc_accounts.count
-  sfdc_optys = SfdcOpportunitys.all
-  total_o = sfdc_optys.count
+
+#  Currently, the only scope is accounts. This is for future stuff
+#  o = 0
+#  sfdc_optys = SfdcOpportunitys.all
+#  total_o = sfdc_optys.count
   
   sfdc_accounts.each do |sfdc_account|
     account = Accounts.new(sfdc_account.attributes)
@@ -61,6 +63,7 @@ def generate_test_data(rows=10000)
   #it will then clean out the staging table
   
   #if you need more or less, call it by hand and pass it the number that you need
+  a = 0
   
   rows.times do
     foo = StagingAccount.new
@@ -80,5 +83,19 @@ def generate_test_data(rows=10000)
     foo.phone= Faker::PhoneNumber.phone_number
     foo.numberofemployees = Random.new.rand(1000)
     foo.save
+    puts "created account #" + a.to_s
+    a = a + 1
   end
+  
+  stages = StagingAccount.all
+  stages.each do |stage|
+    stage.id = nil
+    sfdc_account = SfdcAccounts.new(stage.attributes)
+    sfdc_account.save
+    stage.destroy
+    puts "moved account #" + a.to_s
+    a = a - 1
+  end
+  
+  
 end
