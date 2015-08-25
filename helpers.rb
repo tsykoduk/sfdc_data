@@ -48,7 +48,6 @@ def generate_test_data(rows=10000)
   
   #if you need more or less, call it by hand and pass it the number that you need
   a = 0
-  
   rows.times do
     foo = StagingAccount.new
     foo.name = Faker::Company.name
@@ -70,7 +69,6 @@ def generate_test_data(rows=10000)
     puts "created account #" + a.to_s
     a = a + 1
   end
-  
   stages = StagingAccount.all
   stages.each do |stage|
     temp = stage.id
@@ -82,6 +80,4 @@ def generate_test_data(rows=10000)
     puts "moved account #" + a.to_s
     a = a - 1
   end
-  
-  
 end

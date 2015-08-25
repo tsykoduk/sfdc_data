@@ -3,19 +3,19 @@ class Account < ActiveRecord::Migration
     create_table "account", force: :cascade do |t|
       t.datetime "lastmodifieddate"
       t.string   "shippingpostalcode", limit: 20
-      t.string   "lastmodifiedbyid",   limit: 18
+#      t.string   "lastmodifiedbyid",   limit: 18
       t.string   "name",               limit: 255
       t.string   "industry",           limit: 40
-      t.datetime "lastreferenceddate"
+#      t.datetime "lastreferenceddate"
       t.float    "billinglongitude"
-      t.string   "photourl",           limit: 255
+#      t.string   "photourl",           limit: 255
       t.string   "billingcountry",     limit: 80
       t.string   "fax",                limit: 40
       t.string   "shippingstreet",     limit: 255
       t.string   "shippingcity",       limit: 40
       t.string   "shippingcountry",    limit: 80
-      t.date     "lastactivitydate"
-      t.datetime "lastvieweddate"
+#      t.date     "lastactivitydate"
+#      t.datetime "lastvieweddate"
       t.float    "shippinglongitude"
       t.float    "billinglatitude"
       t.string   "phone",              limit: 40
@@ -24,13 +24,13 @@ class Account < ActiveRecord::Migration
       t.string   "ownerid",            limit: 18
       t.float    "annualrevenue"
       t.text     "description"
-      t.string   "masterrecordid",     limit: 18
+#      t.string   "masterrecordid",     limit: 18
       t.float    "shippinglatitude"
       t.string   "parentid",           limit: 18
       t.datetime "systemmodstamp"
       t.datetime "createddate"
       t.string   "billingpostalcode",  limit: 20
-      t.string   "jigsawcompanyid",    limit: 20
+#      t.string   "jigsawcompanyid",    limit: 20
       t.string   "billingstreet",      limit: 255
       t.string   "website",            limit: 255
       t.boolean  "isdeleted"
@@ -41,7 +41,7 @@ class Account < ActiveRecord::Migration
       t.string   "billingcity",        limit: 40
       t.string   "shippingstate",      limit: 80
       t.string   "billingstate",       limit: 80
-      t.string   "createdbyid",        limit: 18
+#      t.string   "createdbyid",        limit: 18
       t.string   "_hc_err"  
       t.string   "_hc_lastop"
       t.timestamps
