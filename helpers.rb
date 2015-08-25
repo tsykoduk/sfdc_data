@@ -13,7 +13,7 @@ def archive()
   sfdc_accounts.each do |sfdc_account|
     account = Accounts.new(sfdc_account.attributes)
     account.save
-    #sfdc_account.destroy
+    sfdc_account.destroy
     puts "moved account #" + a.to_s + " of " + total_a.to_s
     a = a + 1
   end
@@ -49,7 +49,7 @@ end
 
 def clean_archive()
   
-  accounts = Account.all
+  accounts = Accounts.all
   accounts.each do |a|
     a.destroy
   end
@@ -89,9 +89,11 @@ def generate_test_data(rows=10000)
   
   stages = StagingAccount.all
   stages.each do |stage|
+    temp = stage.id
     stage.id = nil
     sfdc_account = SfdcAccounts.new(stage.attributes)
     sfdc_account.save
+    stage.id = temp
     stage.destroy
     puts "moved account #" + a.to_s
     a = a - 1
