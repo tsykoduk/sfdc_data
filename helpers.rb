@@ -2,30 +2,11 @@
 
 def archive()
   a = 0
-  sfdc_accounts = SfdcAccounts.all
-  total_a = sfdc_accounts.count
-  sfdc_accounts.each do |sfdc_account|
+  SfdcAccounts.find_each do |sfdc_account|
     account = Accounts.new(sfdc_account.attributes)
     account.save
     sfdc_account.destroy
-    puts "moved account #" + a.to_s + " of " + total_a.to_s
-    a = a + 1
-  end
-end
-
-
-
-def put_into_sfdc()
-  a = 0
-  o = 0
-  accounts = Accounts.all
-  total_a = accounts
-  optys = Opportunitys.all
-  total_o = optys
-  accounts.each do |account|
-    sfdc_account = SfdcAccounts.new(account.attributes)
-    sfdc_account.save
-    puts "moved account #" + a.to_s + " of " + total_a.to_s
+    puts "archived account #" + a.to_s
     a = a + 1
   end
 end
@@ -33,8 +14,7 @@ end
 
 def clean_archive()
   
-  accounts = Accounts.all
-  accounts.each do |a|
+  accounts.find_each do |a|
     a.destroy
   end
   
@@ -69,8 +49,10 @@ def generate_test_data(rows=10000)
     puts "created account #" + a.to_s
     a = a + 1
   end
-  stages = StagingAccount.all
-  stages.each do |stage|
+end
+
+def move_test_into_sfdc()
+  StagingAccount.find_each do |stage|
     temp = stage.id
     stage.id = nil
     sfdc_account = SfdcAccounts.new(stage.attributes)

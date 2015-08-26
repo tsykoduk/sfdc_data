@@ -1,7 +1,7 @@
 class Stagingaccount < ActiveRecord::Migration
   def up
-    create_table "account", force: :cascade do |t|
-      t.datetime "lastmodifieddate"
+    create_table "stagingaccount", force: :cascade do |t|
+#      t.datetime "lastmodifieddate"
       t.string   "shippingpostalcode", limit: 20
 #      t.string   "lastmodifiedbyid",   limit: 18
       t.string   "name",               limit: 255
