@@ -32,7 +32,7 @@ class App < Sinatra::Base
   end
   
   get "/clean-archive" do
-    clean_td()
+    clean_archive()
     redirect to('/')
   end    
   
