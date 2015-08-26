@@ -11,14 +11,17 @@ def archive()
 end
 
 def clean_archive()
+  a = 0 
   Accounts.find_each do |a|
     a.destroy
+    puts "destroyed archive #" a.to_s
+    a = a + 1
   end
 end
 
-def generate_test_data(rows=10000)
+def generate_test_data(rows=1000)
   
-  #this will generate 10000 accounts, and put them into a staging table in Postgres
+  #this will generate 1000 accounts, and put them into a staging table in Postgres
   #it will then copy them from the staging table into connect, for upload into SFDC
   #it will then clean out the staging table
   
@@ -48,6 +51,7 @@ def generate_test_data(rows=10000)
 end
 
 def move_test_into_sfdc()
+  a = 0
   StagingAccount.find_each do |stage|
     temp = stage.id
     stage.id = nil
