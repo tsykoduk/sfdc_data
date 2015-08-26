@@ -1,7 +1,7 @@
 require 'bundler'
 Bundler.require
 
-set :database, ENV['DATABASE_URL'] || "postgres://ub5r03tajmc10u:p7fern0a6cp2acddbk60piojl57@ec2-107-21-118-125.compute-1.amazonaws.com:5492/de4du2toaka3b1"
+set :database, ENV['DATABASE_URL']
 
 class App < Sinatra::Base
 
