@@ -36,12 +36,12 @@ class App < Sinatra::Base
     redirect to('/')
   end    
   
-  get "/generate_fake_accounts" do
+  get "/generate-fake-accounts" do
     generate_test_data()
     redirect to('/')
   end
   
-  get "/load_test_into_sfdc" do
+  get "/load-test-into-sfdc" do
     move_test_into_sfdc()
     redirect to('/')
   end
