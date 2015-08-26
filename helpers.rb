@@ -12,8 +12,8 @@ end
 
 def clean_archive()
   a = 0 
-  Accounts.find_each do |a|
-    a.destroy
+  Accounts.find_each do |archive_account|
+    archive_account.destroy
     puts "destroyed archive #" + a.to_s
     a = a + 1
   end
