@@ -19,6 +19,16 @@ def clean_archive()
   end
 end
 
+def clean_stage()
+  a = 0 
+  StagingAccount.find_each do |stage_account|
+    stage_account.destroy
+    puts "destroyed staged account #" + a.to_s
+    a = a + 1
+  end
+end
+
+
 def generate_test_data(rows=1000)
   
   #this will generate 1000 accounts, and put them into a staging table in Postgres
