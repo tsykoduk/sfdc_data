@@ -70,6 +70,6 @@ def move_test_into_sfdc()
     stage.id = temp
     stage.destroy
     puts "moved account #" + a.to_s
-    a = a - 1
+    a = a + 1
   end
 end
