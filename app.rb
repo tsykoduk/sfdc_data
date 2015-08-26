@@ -12,6 +12,7 @@ class App < Sinatra::Base
   get "/" do
     @archive_accounts_count = Accounts.all.count
     @sfdc_accounts_count = SfdcAccounts.all.count
+    @staged_accounts_count = StagingAccount.all.count
     erb :index, :layout => :theme
   end
   
@@ -35,6 +36,14 @@ class App < Sinatra::Base
     redirect to('/')
   end    
   
+  get "/generate_fake_accounts" do
+    generate_test_data()
+    redirect to('/')
+  end
   
-  
+  get "/load_test_into_sfdc" do
+    move_test_into_sfdc()
+    redirect to('/')
+  end
+    
 end
