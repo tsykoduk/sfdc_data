@@ -5,9 +5,10 @@ set :database, ENV['DATABASE_URL'] || "postgres://ub5r03tajmc10u:p7fern0a6cp2acd
 
 Dir["./models/*.rb"].each {|file| require file }
 
-require "./helpers.rb"
 
 class App < Sinatra::Base
+
+require "./helpers.rb"
   
   get "/" do
     @archive_accounts_count = Accounts.all.count
