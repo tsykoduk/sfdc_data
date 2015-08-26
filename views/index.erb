@@ -3,7 +3,9 @@
 	<div class="col-md-8 col-md-offset-2">
 		<p>Welcome to the SFDC Archiver</p>
 		<p>Currently we have <%= @archive_accounts_count %> records in our archive table and <%= @sfdc_accounts_count %> in our SFDC Sync table and <%= @staged_accounts_count %> staged accounts for loading into SFDC.</p>
-		<p>Do you want to <a href="/archive">Archive Data</a>?</p>
-		<p>After you are done, you can <a href="/clean-archive">Clean up the Archive table</a> and <a href="/clean-sfdc">Clean up the Heroku Connect table</a> (These deletes will get sycned to SFDC as well. Just keep in mind that you will need to empty your recycle bin as well!). You can also <a href="/generate-fake-accounts">generate 1000 new accounts</a> and <a href="/load-test-into-sfdc">load them into SFDC</a>.</p>
+		<p>Do you want to <a href="/generate-fake-accounts">generate 1000 new accounts</a>?</p>
+        <p>Do you want to <a href="/load-test-into-sfdc">load staging into SFDC</a>?</p>
+        <p>Do you want to <a href="/archive">Archive Data</a>?</p>
+		<p>After you are done, you can <a href="/clean-archive">Clean up the Archive table</a> and <a href="/clean-sfdc">Clean up the Heroku Connect table</a> (These deletes will get sycned to SFDC as well. Just keep in mind that you will need to empty your recycle bin as well!). </p>
 </div>
 </div>
