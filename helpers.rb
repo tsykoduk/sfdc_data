@@ -1,5 +1,4 @@
 
-
 def archive()
   a = 0
   SfdcAccounts.find_each do |sfdc_account|
@@ -11,13 +10,10 @@ def archive()
   end
 end
 
-
 def clean_archive()
-  
   accounts.find_each do |a|
     a.destroy
   end
-  
 end
 
 def generate_test_data(rows=10000)

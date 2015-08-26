@@ -12,8 +12,6 @@ class App < Sinatra::Base
   get "/" do
     @archive_accounts_count = Accounts.all.count
     @sfdc_accounts_count = SfdcAccounts.all.count
-    @archive_opty_count = Opportunitys.all.count
-    @sfdc_opty_count = SfdcOpportunitys.all.count
     erb :index, :layout => :theme
   end
   
