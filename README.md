@@ -1,6 +1,6 @@
 # Force Archiver
 
-Grab data from Force, move it to a archive table in Postgres
+Grab data from Force, move it to an archive table in Postgres
 
 **To install **
 
