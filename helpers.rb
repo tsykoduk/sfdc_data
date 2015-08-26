@@ -11,7 +11,7 @@ def archive()
 end
 
 def clean_archive()
-  accounts.find_each do |a|
+  Accounts.find_each do |a|
     a.destroy
   end
 end
